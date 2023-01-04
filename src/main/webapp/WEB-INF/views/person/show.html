@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span th:text="${person.getName()}"></span>
+    <span th:text="${person.getSurname() + ', '}"></span>
+    <span th:text="${person.getYear()}"></span>
+    <hr><br>
+    <div th:if="${books.size() == 0}">
+        <span>Человек пока не взял ни одной книги</span>
+    </div>
+    <div th:if="${books.size() > 0}">
+        <b>Книги</b>
+        <div th:each="book : ${books}">
+            <a th:href="@{/book/{id}(id = ${book.getBook_id()})}">
+                <span th:text="${book.getName() + ', '}"></span>
+                <span th:text="${book.getAuthor() + ', '}"></span>
+                <span th:text="${book.getYear()}"></span>
+            </a>
+            <br>
+        </div> 
+    </div>
+    <br><hr>
+    <a th:href="@{/people/{id}/edit(id=${person.getPerson_id()})}">
+        <button>Edit person</button>
+    </a>
+    <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getPerson_id()})}" th:object="${person}" action="#">
+        <input type="submit" value="Delete person">
+    </form>
+</body>
+</html>

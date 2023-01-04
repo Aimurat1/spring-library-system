@@ -1,0 +1,9 @@
+kz\project1\config\ApplicationContextMVC.class
+kz\project1\config\DispatcherServletInit.class
+kz\project1\models\Person.class
+kz\project1\dao\BookDAO.class
+kz\project1\dao\BookMapper.class
+kz\project1\controllers\BookController.class
+kz\project1\dao\PersonDAO.class
+kz\project1\models\Book.class
+kz\project1\controllers\PersonController.class
